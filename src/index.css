@@ -5,10 +5,32 @@
   list-style: none;
   text-decoration: none;
   color: inherit;
+  font-family: 'Regular';
 }
 
 body {
   background: #fafafa;
   width: 100vw;
   height: 100vh;
+}
+
+@font-face {
+  font-family: 'Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2204@1.0/HallymGothic-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Medium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2204@1.0/HallymGothic-Medium.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2204@1.0/HallymGothic-Bold.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
 }
