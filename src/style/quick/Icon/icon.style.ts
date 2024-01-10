@@ -15,6 +15,7 @@ export const IconBox = chakra(Flex, {
     width: '60px',
     height: '60px',
     borderRadius: '50%',
+    boxShadow: '0 0 20px -10px rgba(0, 0, 0, 0.5) inset',
   },
 });
 
