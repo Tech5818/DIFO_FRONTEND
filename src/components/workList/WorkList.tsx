@@ -6,6 +6,8 @@ import {
   M_WorkListTabPanels,
   M_WorkListTabs,
 } from '../../style/workList/workList.style';
+import { WorkListSearchBar } from './WorkListSearchBar';
+import { WorkLists } from './WorkLists';
 
 export const WorkList = () => {
   return (
@@ -20,8 +22,14 @@ export const WorkList = () => {
             <M_WorkListTab>프로젝트</M_WorkListTab>
           </M_WorkListTabList>
           <M_WorkListTabPanels>
-            <M_WorkListTabPanel>asdf</M_WorkListTabPanel>
-            <M_WorkListTabPanel>ds</M_WorkListTabPanel>
+            <M_WorkListTabPanel>
+              <WorkListSearchBar />
+              <WorkLists />
+            </M_WorkListTabPanel>
+            <M_WorkListTabPanel>
+              <WorkListSearchBar />
+              <WorkLists />
+            </M_WorkListTabPanel>
           </M_WorkListTabPanels>
         </M_WorkListTabs>
       </M_WorkListContainer>
