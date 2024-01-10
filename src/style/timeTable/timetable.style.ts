@@ -3,7 +3,7 @@ import { Flex, Table, Tbody, Th, Thead, Tr, chakra } from '@chakra-ui/react';
 export const M_TimeTableContainer = chakra(Flex, {
   baseStyle: {
     justifyContent: 'center',
-    margin: '20px 20px',
+    marginTop: '20px',
     padding: '15px',
     background: '#fff',
     boxShadow: '0 0 20px -10px rgba(0, 0, 0, 0.6)',

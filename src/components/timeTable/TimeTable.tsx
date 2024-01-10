@@ -1,6 +1,5 @@
 import {
   M_TimeTable,
-  M_TimeTableClassTh,
   M_TimeTableContainer,
   M_TimeTableTbody,
   M_TimeTableTh,
