@@ -1,4 +1,6 @@
 import { PropsWithChildren, createContext } from 'react';
+import { ChakraProvider } from '@chakra-ui/react';
+import { BrowserRouter } from 'react-router-dom';
 
 type ContextType = {};
 
@@ -9,7 +11,11 @@ export const Context = createContext(defaultContext);
 export const Provider = ({ children }: PropsWithChildren) => {
   return (
     <>
-      <Context.Provider value={{}}>{children}</Context.Provider>
+      <BrowserRouter>
+        <ChakraProvider>
+          <Context.Provider value={{}}>{children}</Context.Provider>
+        </ChakraProvider>
+      </BrowserRouter>
     </>
   );
 };
