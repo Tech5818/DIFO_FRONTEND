@@ -6,3 +6,9 @@
   text-decoration: none;
   color: inherit;
 }
+
+body {
+  background: #fafafa;
+  width: 100vw;
+  height: 100vh;
+}
