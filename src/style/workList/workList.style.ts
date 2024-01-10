@@ -36,5 +36,7 @@ export const M_WorkListTabPanels = chakra(TabPanels, {
 });
 
 export const M_WorkListTabPanel = chakra(TabPanel, {
-  baseStyle: {},
+  baseStyle: {
+    padding: '20px 0',
+  },
 });
