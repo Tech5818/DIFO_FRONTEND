@@ -11,10 +11,15 @@ export const Quick = () => {
   return (
     <>
       <M_Quick>
-        <Icon icon={faLayerGroup} text='포트폴리오' background='#4285EB' />
-        <Icon icon={faTableColumns} text='게시판' background='#4285EB' />
-        <Icon icon={faBowlFood} text='급식표' background='#4285EB' />
-        <Icon icon={faBusSimple} text='용산 03' background='#4285EB' />
+        <Icon
+          icon={faLayerGroup}
+          text='작업물'
+          background='#4285EB'
+          to='works'
+        />
+        <Icon icon={faTableColumns} text='게시판' background='#4285EB' to='' />
+        <Icon icon={faBowlFood} text='급식표' background='#4285EB' to='' />
+        <Icon icon={faBusSimple} text='용산 03' background='#4285EB' to='' />
       </M_Quick>
     </>
   );

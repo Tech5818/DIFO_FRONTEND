@@ -1,9 +1,7 @@
 import { Box, Flex, Text, chakra } from '@chakra-ui/react';
 
 export const M_RecentContainer = chakra(Box, {
-  baseStyle: {
-    padding: '0 20px',
-  },
+  baseStyle: {},
 });
 
 export const M_RecentBox = chakra(Flex, {

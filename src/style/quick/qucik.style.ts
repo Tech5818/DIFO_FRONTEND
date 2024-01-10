@@ -5,6 +5,6 @@ export const M_Quick = chakra(Flex, {
     alignItems: 'center',
     justifyContent: 'space-between',
     gap: '10px',
-    padding: '30px 40px',
+    padding: '30px 20px',
   },
 });
