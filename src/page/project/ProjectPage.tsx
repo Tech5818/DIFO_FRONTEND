@@ -1,5 +1,4 @@
-import { Comment } from '../../components/comment/Comment';
-import { CommnetItem } from '../../components/comment/CommentItem';
+import { useParams } from 'react-router-dom';
 import { Recommend } from '../../components/recommend/Recommend';
 import {
   M_ProjectBox,
@@ -14,8 +13,59 @@ import {
   M_ProjectWriterName,
   M_ProjectWriterNameDate,
 } from '../../style/project/project.style';
+import {
+  getProjectDetails,
+  postProjectLike,
+} from '../../apis/Project';
+import { useEffect, useState } from 'react';
+
+type stackProps = {
+  stackId: number;
+  stackName: string;
+};
+
+type userDataProps = {
+  email: string;
+  memberId: number;
+  name: string;
+};
+
+type projectProps = {
+  deployUrl: string;
+  endDate: Date;
+  githubUrl: string;
+  likes: number;
+  mainContents: string;
+  projectIntroduction: string;
+  projectName: string;
+  stacks: stackProps[];
+  startDate: Date;
+  subject: string;
+  thumbnailUrl: string;
+  userData: userDataProps[];
+};
 
 const ProjectPage = () => {
+  const { projectId } = useParams();
+  const [portfolioDetails, setPortfolioDetails] =
+    useState<projectProps>();
+
+  useEffect(() => {
+    const getDetailsData = async () => {
+      const res = await getProjectDetails(
+        parseInt(projectId!),
+      );
+
+      setPortfolioDetails(res);
+    };
+
+    getDetailsData();
+  }, [portfolioDetails]);
+
+  const likeButtonClickHandler = async () => {
+    await postProjectLike(parseInt(projectId!));
+  };
+
   return (
     <>
       <M_ProjectContainer>
@@ -24,58 +74,31 @@ const ProjectPage = () => {
             <M_ProjectWriterImg />
             <M_ProjectWriterNameDate>
               <M_ProjectWriterName>
-                신권호
+                {portfolioDetails?.userData[0].name}
               </M_ProjectWriterName>
               <M_ProjectDate>5분전</M_ProjectDate>
             </M_ProjectWriterNameDate>
           </M_ProjectWriter>
           <M_ProjectMain>
-            <M_ProjectTitle>제목이다 하하</M_ProjectTitle>
+            <M_ProjectTitle>
+              {portfolioDetails?.projectName}
+            </M_ProjectTitle>
+            <h3>{portfolioDetails?.mainContents}</h3>
             <M_ProjectStacks>
-              <M_ProjectStack>프론트엔드</M_ProjectStack>
-              <M_ProjectStack>프론트엔드</M_ProjectStack>
-              <M_ProjectStack>프론트엔드</M_ProjectStack>
-              <M_ProjectStack>
-                프론트엔드 및 AWS
-              </M_ProjectStack>
-              <M_ProjectStack>프론트엔드</M_ProjectStack>
-              <M_ProjectStack>프론트엔드</M_ProjectStack>
+              {portfolioDetails?.stacks.map(
+                (stack, idx) => (
+                  <M_ProjectStack key={idx}>
+                    {stack.stackName}
+                  </M_ProjectStack>
+                ),
+              )}
             </M_ProjectStacks>
           </M_ProjectMain>
         </M_ProjectBox>
-        <Recommend />
-        <Comment>
-          <CommnetItem
-            writer='이선우'
-            date='5분전'
-            text='나 이선우 인데 개추 눌렀다 ㅋㅋ'
-          />
-          <CommnetItem
-            writer='이선우'
-            date='5분전'
-            text='나 이선우 인데 개추 눌렀다 ㅋㅋ'
-          />
-          <CommnetItem
-            writer='이선우'
-            date='5분전'
-            text='나 이선우 인데 개추 눌렀다 ㅋㅋ'
-          />
-          <CommnetItem
-            writer='이선우'
-            date='5분전'
-            text='나 이선우 인데 개추 눌렀다 ㅋㅋ'
-          />
-          <CommnetItem
-            writer='이선우'
-            date='5분전'
-            text='나 이선우 인데 개추 눌렀다 ㅋㅋ'
-          />
-          <CommnetItem
-            writer='이선우'
-            date='5분전'
-            text='나 이선우 인데 개추 눌렀다 ㅋㅋ'
-          />
-        </Comment>
+        <Recommend
+          likes={portfolioDetails?.likes!}
+          likeButtonClickHandler={likeButtonClickHandler}
+        />
       </M_ProjectContainer>
     </>
   );

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import {
   M_BestWorkContent,
   M_BestWorkContentImage,
@@ -8,6 +9,10 @@ import {
   M_BestWorksContents,
   M_BestWorksTitle,
 } from '../../style/bestWorks/bestWorks.style';
+import { bestWorks } from '../../types/BestWorks.type';
+import { getPortfoliosByRecommend } from '../../apis/Portfolio';
+import { getProjectByRecommend } from '../../apis/Project';
+import { Link } from 'react-router-dom';
 
 interface BestWorksProps {
   title: string;
@@ -18,42 +23,83 @@ export const BestWorks = ({
   title,
   type,
 }: BestWorksProps) => {
+  const [data, setData] = useState<bestWorks[]>();
+
+  useEffect(() => {
+    const getRecommendData = async () => {
+      let res = null;
+      if (type === 'portfolio') {
+        res = await getPortfoliosByRecommend();
+      } else {
+        res = await getProjectByRecommend();
+      }
+
+      setData(res.data);
+    };
+
+    getRecommendData();
+  }, [data]);
+
   return (
     <>
-      <M_BestWorksContainer>
-        <M_BestWorksTitle>{title}</M_BestWorksTitle>
-        {type === 'portfolio' ? (
-          <M_BestWorksContents>
-            <M_BestWorkContent>
-              <M_BestWorkContentImage />
-              <M_BestWorkContentTextArea>
-                <M_BestWorkContentTitle>
-                  제목인데 어쩔건데 너가 뭘 할수 있지?
-                </M_BestWorkContentTitle>
-                <M_BestWorkContentWriter>
-                  신권호
-                </M_BestWorkContentWriter>
-              </M_BestWorkContentTextArea>
-            </M_BestWorkContent>
-            <M_BestWorkContent></M_BestWorkContent>
-          </M_BestWorksContents>
-        ) : (
-          <M_BestWorksContents>
-            <M_BestWorkContent>
-              <M_BestWorkContentImage />
-              <M_BestWorkContentTextArea>
-                <M_BestWorkContentTitle>
-                  제목인데 어쩔건데 너가 뭘 할수 있지?
-                </M_BestWorkContentTitle>
-                <M_BestWorkContentWriter>
-                  신권호
-                </M_BestWorkContentWriter>
-              </M_BestWorkContentTextArea>
-            </M_BestWorkContent>
-            <M_BestWorkContent></M_BestWorkContent>
-          </M_BestWorksContents>
-        )}
-      </M_BestWorksContainer>
+      {!data && <h3>Loading....</h3>}
+      {!!data && (
+        <M_BestWorksContainer>
+          <M_BestWorksTitle>{title}</M_BestWorksTitle>
+          {type === 'portfolio' ? (
+            <M_BestWorksContents>
+              {data.length === 0 && (
+                <h3>아직 데이터가 없어요...</h3>
+              )}
+              {data.length !== 0 &&
+                data.map((portfolio, idx) => {
+                  return (
+                    <M_BestWorkContent key={idx}>
+                      <M_BestWorkContentImage />
+                      <M_BestWorkContentTextArea>
+                        <M_BestWorkContentTitle>
+                          {portfolio.portfolioTitle}
+                        </M_BestWorkContentTitle>
+                        <M_BestWorkContentWriter>
+                          신권호
+                        </M_BestWorkContentWriter>
+                      </M_BestWorkContentTextArea>
+                    </M_BestWorkContent>
+                  );
+                })}
+            </M_BestWorksContents>
+          ) : (
+            <M_BestWorksContents>
+              {data.length === 0 && (
+                <h3>아직 데이터가 없어요...</h3>
+              )}
+              {data.length !== 0 &&
+                data.map((project, idx) => {
+                  return (
+                    <Link
+                      to={`/works/project/${project.projectId}`}
+                      key={idx}
+                    >
+                      <M_BestWorkContent>
+                        <M_BestWorkContentImage
+                          src={project.thumbnail}
+                        />
+                        <M_BestWorkContentTextArea>
+                          <M_BestWorkContentTitle>
+                            {project.projectName}
+                          </M_BestWorkContentTitle>
+                          <M_BestWorkContentWriter>
+                            {`#${project.projectId}`}
+                          </M_BestWorkContentWriter>
+                        </M_BestWorkContentTextArea>
+                      </M_BestWorkContent>
+                    </Link>
+                  );
+                })}
+            </M_BestWorksContents>
+          )}
+        </M_BestWorksContainer>
+      )}
     </>
   );
 };

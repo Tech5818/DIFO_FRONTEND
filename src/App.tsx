@@ -42,12 +42,12 @@ function App() {
           loader={WorkPage.load}
         />
         <Route
-          path='/works/portfolio/*'
+          path='/works/portfolio/:portfolioId'
           element={<PortfolioPage />}
           loader={PortfolioPage.load}
         />
         <Route
-          path='/works/project/*'
+          path='/works/project/:projectId'
           element={<ProjectPage />}
           loader={ProjectPage.load}
         />

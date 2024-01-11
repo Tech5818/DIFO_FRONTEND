@@ -1,4 +1,6 @@
 import { Box, Flex, chakra } from '@chakra-ui/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { motion } from 'framer-motion';
 
 /**
  * @todo 모바일 Header components
@@ -45,5 +47,21 @@ export const M_Menu = chakra(Flex, {
     zIndex: 1,
     padding: '20px',
     justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+});
+
+export const M_CLOSE_BTN = chakra(FontAwesomeIcon, {
+  baseStyle: {
+    position: 'absolute',
+    top: 30,
+  },
+});
+
+export const M_MENU_NAV = chakra(motion.ul, {
+  baseStyle: {
+    width: '100%',
+    textAlign: 'center',
+    padding: '0.3rem',
   },
 });

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Comment } from '../../components/comment/Comment';
 import { CommnetItem } from '../../components/comment/CommentItem';
 import { Recommend } from '../../components/recommend/Recommend';
@@ -14,8 +15,26 @@ import {
   M_PortfolioWriterName,
   M_PortfolioWriterNameDate,
 } from '../../style/portfolio/portfolio.style';
+import { getPortfolioDetails } from '../../apis/Portfolio';
+import { useParams } from 'react-router-dom';
 
 const PortfolioPage = () => {
+  const { portfolioId } = useParams();
+  const [portfolioDetails, setPortfolioDetails] =
+    useState();
+
+  useEffect(() => {
+    const getDetailsData = async () => {
+      const res = await getPortfolioDetails(
+        parseInt(portfolioId),
+      );
+
+      console.log(res.data);
+    };
+
+    getDetailsData();
+  }, []);
+
   return (
     <>
       <M_PortfolioContainer>

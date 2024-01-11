@@ -8,6 +8,7 @@ import {
 } from '../../style/recent/recent.style';
 import { RecentLists } from './RecentLists';
 import { RecentItem } from './RecentItem';
+import { Link } from 'react-router-dom';
 
 export const Recent = ({
   variants,
@@ -20,7 +21,9 @@ export const Recent = ({
         <M_RecentBox>
           <M_RecentTitleBox justifyContent='space-between'>
             <M_RecentTitle>최근 게시물</M_RecentTitle>
-            <M_RecentMore>더보기</M_RecentMore>
+            <M_RecentMore>
+              <Link to='/boards'>더보기</Link>
+            </M_RecentMore>
           </M_RecentTitleBox>
           <RecentLists>
             <RecentItem
