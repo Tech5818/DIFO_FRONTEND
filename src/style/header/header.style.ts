@@ -36,7 +36,7 @@ export const M_Layer = chakra(Box, {
   },
 });
 
-export const M_Menu = chakra(Flex, {
+export const M_Menu = chakra(motion.div, {
   baseStyle: {
     position: 'absolute',
     height: '100%',
@@ -48,6 +48,7 @@ export const M_Menu = chakra(Flex, {
     padding: '20px',
     justifyContent: 'flex-end',
     alignItems: 'center',
+    display: 'flex',
   },
 });
 
