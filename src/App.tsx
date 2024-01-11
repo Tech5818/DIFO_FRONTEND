@@ -1,5 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import { Header } from './components/header/Header';
+<<<<<<< HEAD
+import { Portfolio } from './page/portfolio/Portfolio';
+import { Project } from './page/project/Project';
+=======
 import loadable from '@loadable/component';
 
 const HomePage = loadable(
@@ -13,6 +17,7 @@ const WorkPage = loadable(
 const PortfolioPage = loadable(
   () => import('./page/portfolio/Portfolio'),
 );
+>>>>>>> a3eb41d520aa99a8ea52b3e5ad1c8194bd255e89
 
 function App() {
   return (
@@ -30,9 +35,18 @@ function App() {
           loader={WorkPage.load}
         />
         <Route
+<<<<<<< HEAD
+          path='/works/portfolio/*'
+          element={<Portfolio />}
+=======
           path='/works/portfolio'
           element={<PortfolioPage />}
           loader={PortfolioPage.load}
+>>>>>>> a3eb41d520aa99a8ea52b3e5ad1c8194bd255e89
+        />
+        <Route
+          path='/works/project/*'
+          element={<Project />}
         />
       </Routes>
     </>
