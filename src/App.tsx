@@ -26,6 +26,11 @@ const NoticeBoardPage = loadable(
   () => import('./page/noticeBoard/NoticeBoardPage'),
 );
 
+const NoticeBoardWritePage = loadable(
+  () =>
+    import('./page/noticeBoardWrite/NoticeBoardWritePage'),
+);
+
 function App() {
   return (
     <>
@@ -60,6 +65,11 @@ function App() {
           path='/boards/board/*'
           element={<NoticeBoardPage />}
           loader={NoticeBoardPage.load}
+        />
+        <Route
+          path='/boards/write'
+          element={<NoticeBoardWritePage />}
+          loader={NoticeBoardWritePage.load}
         />
       </Routes>
     </>
