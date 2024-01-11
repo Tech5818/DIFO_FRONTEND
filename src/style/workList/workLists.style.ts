@@ -1,26 +1,20 @@
-import {
-  Flex,
-  Select,
-  Text,
-  chakra,
-} from '@chakra-ui/react';
+import { Flex, Text, chakra } from '@chakra-ui/react';
 
 export const M_WorkListsContainer = chakra(Flex, {
   baseStyle: {
     flexFlow: 'column',
     gap: '20px',
+    height: '400px',
+    maxHeight: '400px',
+    overflowY: 'scroll',
   },
 });
 
-export const M_WorkListsSelect = chakra(Select, {
+export const M_WorkListsType = chakra(Text, {
   baseStyle: {
-    width: 'auto',
-    height: 'auto',
-    padding: '8px 16px',
-    fontSize: '20px',
-    fontFamily: 'medium',
-    marginTop: '20px',
-    borderRadius: '50px',
+    fontSize: '24px',
+    fontFamily: 'bold',
+    padding: '20px 0',
   },
 });
 
@@ -34,6 +28,7 @@ export const M_WorkLists = chakra(Flex, {
 export const M_WorkListsTitle = chakra(Text, {
   baseStyle: {
     fontSize: '22px',
+    fontFamily: 'medium',
   },
 });
 

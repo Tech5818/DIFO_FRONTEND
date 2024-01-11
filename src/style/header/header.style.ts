@@ -24,12 +24,13 @@ export const M_HeaderSide = chakra(Flex, {
 
 export const M_Layer = chakra(Box, {
   baseStyle: {
-    position: 'absolute',
+    position: 'fixed',
     top: 0,
     bottom: 0,
     left: 0,
     right: 0,
     background: 'rgba(0, 0, 0, 0.6)',
+    zIndex: 100,
   },
 });
 
