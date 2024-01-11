@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { NoticeBoardsList } from '../../components/noticeBoards/NoticeBoardsList';
 import {
   M_NoticeBoardsButton,
@@ -9,6 +10,12 @@ import {
 } from '../../style/noticeBoards/noticeBoards.style';
 
 const NoticeBoardsPage = () => {
+  const navigator = useNavigate();
+
+  const handleToWriteNoticeBoard = () => {
+    navigator('/boards/write');
+  };
+
   return (
     <>
       <M_NoticeBoardsContainer>
@@ -24,7 +31,9 @@ const NoticeBoardsPage = () => {
               이 있을땐?
             </M_NoticeBoardsWriteText>
           </M_NoticeBoardsWriteTexts>
-          <M_NoticeBoardsButton>
+          <M_NoticeBoardsButton
+            onClick={handleToWriteNoticeBoard}
+          >
             글쓰기
           </M_NoticeBoardsButton>
         </M_NoticeBoardsToWrite>
