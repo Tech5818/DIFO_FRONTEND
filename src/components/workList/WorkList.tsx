@@ -27,39 +27,59 @@ export const WorkList = () => {
               <WorkListSearchBar />
               <WorkLists>
                 <WorkListsItem
-                  title='제목이당'
+                  id='1'
+                  title='제목이당당당당당당당한 대통령 홍준표'
                   writer='신권호'
                   date='5분전'
+                  stacks={[
+                    '프론트엔드',
+                    '백엔드',
+                    '리액트',
+                    'express',
+                    'awt',
+                    'nextjs',
+                  ]}
+                  type='portfolio'
                 />
                 <WorkListsItem
+                  id='1'
                   title='제목이당'
                   writer='신권호'
                   date='5분전'
+                  stacks={['프론트엔드', '백엔드']}
+                  type='portfolio'
                 />
                 <WorkListsItem
+                  id='1'
                   title='제목이당'
                   writer='신권호'
                   date='5분전'
+                  type='portfolio'
+                  stacks={['프론트엔드', '백엔드']}
                 />
                 <WorkListsItem
+                  id='1'
                   title='제목이당'
                   writer='신권호'
                   date='5분전'
+                  stacks={['프론트엔드', '백엔드']}
+                  type='portfolio'
                 />
                 <WorkListsItem
+                  id='1'
                   title='제목이당'
                   writer='신권호'
                   date='5분전'
+                  stacks={['프론트엔드', '백엔드']}
+                  type='portfolio'
                 />
                 <WorkListsItem
+                  id='1'
                   title='제목이당'
                   writer='신권호'
                   date='5분전'
-                />
-                <WorkListsItem
-                  title='제목이당'
-                  writer='신권호'
-                  date='5분전'
+                  stacks={['프론트엔드', '백엔드']}
+                  type='portfolio'
                 />
               </WorkLists>
             </M_WorkListTabPanel>
@@ -67,29 +87,52 @@ export const WorkList = () => {
               <WorkListSearchBar />
               <WorkLists>
                 <WorkListsItem
+                  id='1'
                   title='제목이당'
                   writer='신권호'
                   date='5분전'
+                  stacks={['프론트엔드', '백엔드']}
+                  type='project'
                 />
                 <WorkListsItem
+                  id='1'
                   title='제목이당'
                   writer='신권호'
                   date='5분전'
+                  stacks={['프론트엔드', '백엔드']}
+                  type='project'
                 />
                 <WorkListsItem
+                  id='1'
                   title='제목이당'
                   writer='신권호'
                   date='5분전'
+                  stacks={['프론트엔드', '백엔드']}
+                  type='project'
                 />
                 <WorkListsItem
+                  id='1'
                   title='제목이당'
                   writer='신권호'
                   date='5분전'
+                  stacks={['프론트엔드', '백엔드']}
+                  type='project'
                 />
                 <WorkListsItem
+                  id='1'
                   title='제목이당'
                   writer='신권호'
                   date='5분전'
+                  stacks={['프론트엔드', '백엔드']}
+                  type='project'
+                />
+                <WorkListsItem
+                  id='1'
+                  title='제목이당'
+                  writer='신권호'
+                  date='5분전'
+                  stacks={['프론트엔드', '백엔드']}
+                  type='project'
                 />
               </WorkLists>
             </M_WorkListTabPanel>

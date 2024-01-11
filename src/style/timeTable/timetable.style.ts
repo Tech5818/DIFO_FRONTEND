@@ -1,4 +1,12 @@
-import { Flex, Table, Tbody, Th, Thead, Tr, chakra } from '@chakra-ui/react';
+import {
+  Flex,
+  Table,
+  Tbody,
+  Th,
+  Thead,
+  Tr,
+  chakra,
+} from '@chakra-ui/react';
 
 export const M_TimeTableContainer = chakra(Flex, {
   baseStyle: {
@@ -6,7 +14,7 @@ export const M_TimeTableContainer = chakra(Flex, {
     marginTop: '20px',
     padding: '15px',
     background: '#fff',
-    boxShadow: '0 0 20px -10px rgba(0, 0, 0, 0.6)',
+    boxShadow: '0 4px 8px rgba(218, 226, 237, 0.6)',
     borderRadius: '10px',
     flexFlow: 'column',
   },

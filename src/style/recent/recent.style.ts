@@ -7,7 +7,7 @@ export const M_RecentContainer = chakra(Box, {
 export const M_RecentBox = chakra(Flex, {
   baseStyle: {
     background: '#fff',
-    boxShadow: '0 0 20px -10px rgba(0, 0, 0, 0.6)',
+    boxShadow: '0 4px 8px rgba(218, 226, 237, 0.6)',
     width: '100%',
     padding: '20px',
     gap: '20px',
