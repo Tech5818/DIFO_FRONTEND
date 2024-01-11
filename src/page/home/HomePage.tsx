@@ -19,7 +19,7 @@ const itemAnimation = {
   open: { opacity: 1, y: 0 },
 };
 
-export const HomePage = () => {
+const HomePage = () => {
   return (
     <>
       <M_HomeContent
@@ -34,3 +34,5 @@ export const HomePage = () => {
     </>
   );
 };
+
+export default HomePage;

@@ -92,3 +92,8 @@ export const Portfolio = () => {
     </>
   );
 };
+const PortfolioPage = () => {
+  return <></>;
+};
+
+export default PortfolioPage;
