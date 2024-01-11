@@ -1,19 +1,38 @@
 import { Route, Routes } from 'react-router-dom';
-import { HomePage } from './page/home/HomePage';
-import { WorksPage } from './page/works/WorksPage';
 import { Header } from './components/header/Header';
-import { Portfolio } from './components/portfolio/Portfolio';
+import loadable from '@loadable/component';
+
+const HomePage = loadable(
+  () => import(`./page/home/HomePage`),
+);
+
+const WorkPage = loadable(
+  () => import('./page/works/WorksPage'),
+);
+
+const PortfolioPage = loadable(
+  () => import('./page/portfolio/Portfolio'),
+);
 
 function App() {
   return (
     <>
       <Header />
       <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/works' element={<WorksPage />} />
+        <Route
+          path='/'
+          element={<HomePage />}
+          loader={HomePage.load}
+        />
+        <Route
+          path='/works'
+          element={<WorkPage />}
+          loader={WorkPage.load}
+        />
         <Route
           path='/works/portfolio'
-          element={<Portfolio />}
+          element={<PortfolioPage />}
+          loader={PortfolioPage.load}
         />
       </Routes>
     </>

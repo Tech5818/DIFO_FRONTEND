@@ -2,7 +2,7 @@ import { BestWorks } from '../../components/bestWorks/BestWorks';
 import { WorkList } from '../../components/workList/WorkList';
 import { M_WorksContainer } from '../../style/works/works.style';
 
-export const WorksPage = () => {
+const WorksPage = () => {
   return (
     <>
       <M_WorksContainer>
@@ -16,3 +16,5 @@ export const WorksPage = () => {
     </>
   );
 };
+
+export default WorksPage;
