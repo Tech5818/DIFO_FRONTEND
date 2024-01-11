@@ -1,7 +1,9 @@
 import { Flex, Text, chakra } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 
-export const IconContainer = chakra(Flex, {
+export const IconContainer = chakra(motion.div, {
   baseStyle: {
+    display: 'flex',
     flexFlow: 'column',
     alignItems: 'center',
     gap: '5px',

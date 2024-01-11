@@ -1,6 +1,15 @@
-import { Flex, Table, Tbody, Th, Thead, Tr, chakra } from '@chakra-ui/react';
+import {
+  Flex,
+  Table,
+  Tbody,
+  Th,
+  Thead,
+  Tr,
+  chakra,
+} from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 
-export const M_TimeTableContainer = chakra(Flex, {
+export const M_TimeTableContainer = chakra(motion.div, {
   baseStyle: {
     justifyContent: 'center',
     marginTop: '20px',

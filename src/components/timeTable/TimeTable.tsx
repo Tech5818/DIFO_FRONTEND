@@ -1,3 +1,4 @@
+import { Variants } from 'framer-motion';
 import {
   M_TimeTable,
   M_TimeTableContainer,
@@ -9,10 +10,14 @@ import {
   M_TimeTableTr,
 } from '../../style/timeTable/timetable.style';
 
-export const TimeTable = () => {
+export const TimeTable = ({
+  variants,
+}: {
+  variants: Variants;
+}) => {
   return (
     <>
-      <M_TimeTableContainer>
+      <M_TimeTableContainer variants={variants}>
         <M_TimeTableTitle>시간표</M_TimeTableTitle>
         <M_TimeTable>
           <M_TimeTableThead>

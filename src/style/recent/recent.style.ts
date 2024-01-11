@@ -1,6 +1,7 @@
-import { Box, Flex, Text, chakra } from '@chakra-ui/react';
+import { Flex, Text, chakra } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 
-export const M_RecentContainer = chakra(Box, {
+export const M_RecentContainer = chakra(motion.div, {
   baseStyle: {},
 });
 
