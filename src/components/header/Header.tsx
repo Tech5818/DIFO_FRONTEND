@@ -17,6 +17,7 @@ import {
 import { useContext } from 'react';
 import { Context } from '../../Provider';
 import { MenuItem } from './MenuItem';
+import { Link } from 'react-router-dom';
 
 const variants = {
   open: {
@@ -46,10 +47,12 @@ export const Header = () => {
         <M_Header>
           <Logo />
           <M_HeaderSide>
-            <FontAwesomeIcon
-              icon={faMessage}
-              fontSize='20px'
-            />
+            <Link to='/messageList'>
+              <FontAwesomeIcon
+                icon={faMessage}
+                fontSize='20px'
+              />
+            </Link>
             <FontAwesomeIcon
               icon={faBars}
               fontSize='24px'
@@ -58,7 +61,16 @@ export const Header = () => {
           </M_HeaderSide>
         </M_Header>
         <M_Layer display={onMenu ? 'block' : 'none'}>
-          <M_Menu>
+          <M_Menu
+            initial={{ opacity: 0 }}
+            whileInView={{
+              opacity: 1,
+              transition: {
+                delayChildren: 0.2,
+                duration: 0.5,
+              },
+            }}
+          >
             <M_MENU_NAV
               variants={variants}
               initial={false}

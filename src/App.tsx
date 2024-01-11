@@ -31,6 +31,14 @@ const NoticeBoardWritePage = loadable(
     import('./page/noticeBoardWrite/NoticeBoardWritePage'),
 );
 
+const MessageListPage = loadable(
+  () => import('./page/messageList/MessageListPage'),
+);
+
+const MessagePage = loadable(
+  () => import('./page/message/MessagePage'),
+);
+
 function App() {
   return (
     <>
@@ -70,6 +78,16 @@ function App() {
           path='/boards/write'
           element={<NoticeBoardWritePage />}
           loader={NoticeBoardWritePage.load}
+        />
+        <Route
+          path='/messageList'
+          element={<MessageListPage />}
+          loader={MessageListPage.load}
+        />
+        <Route
+          path='/messageList/message/*'
+          element={<MessagePage />}
+          loader={MessagePage.load}
         />
       </Routes>
     </>

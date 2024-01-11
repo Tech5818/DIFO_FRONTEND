@@ -1,3 +1,4 @@
+import { Mobile } from '../../Responsive';
 import {
   M_CommentItem,
   M_CommentMain,
@@ -22,22 +23,24 @@ export const CommnetItem = ({
 }: CommentItemProps) => {
   return (
     <>
-      <M_CommentItem>
-        <M_CommentWriterInfo>
-          <M_CommnetWriterImg />
-          <M_CommentWriterNameDate>
-            <M_CommentWriterName>
-              {writer}
-            </M_CommentWriterName>
-            <M_CommentWriterDate>
-              {date}
-            </M_CommentWriterDate>
-          </M_CommentWriterNameDate>
-        </M_CommentWriterInfo>
-        <M_CommentMain>
-          <M_CommentText>{text}</M_CommentText>
-        </M_CommentMain>
-      </M_CommentItem>
+      <Mobile>
+        <M_CommentItem>
+          <M_CommentWriterInfo>
+            <M_CommnetWriterImg />
+            <M_CommentWriterNameDate>
+              <M_CommentWriterName>
+                {writer}
+              </M_CommentWriterName>
+              <M_CommentWriterDate>
+                {date}
+              </M_CommentWriterDate>
+            </M_CommentWriterNameDate>
+          </M_CommentWriterInfo>
+          <M_CommentMain>
+            <M_CommentText>{text}</M_CommentText>
+          </M_CommentMain>
+        </M_CommentItem>
+      </Mobile>
     </>
   );
 };
