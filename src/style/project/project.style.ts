@@ -5,7 +5,7 @@ import {
   chakra,
 } from '@chakra-ui/react';
 
-export const M_PortfolioContainer = chakra(Flex, {
+export const M_ProjectContainer = chakra(Flex, {
   baseStyle: {
     flexFlow: 'column',
     padding: '20px',
@@ -13,7 +13,7 @@ export const M_PortfolioContainer = chakra(Flex, {
   },
 });
 
-export const M_PortfolioBox = chakra(Flex, {
+export const M_ProjectBox = chakra(Flex, {
   baseStyle: {
     background: '#fff',
     boxShadow: '0 0 20px -10px rgba(0, 0, 0, 0.5)',
@@ -23,14 +23,14 @@ export const M_PortfolioBox = chakra(Flex, {
   },
 });
 
-export const M_PortfolioWriter = chakra(Flex, {
+export const M_ProjectWriter = chakra(Flex, {
   baseStyle: {
     gap: '8px',
     alignItems: 'center',
   },
 });
 
-export const M_PortfolioWriterImg = chakra(Image, {
+export const M_ProjectWriterImg = chakra(Image, {
   baseStyle: {
     width: '50px',
     height: '50px',
@@ -38,46 +38,46 @@ export const M_PortfolioWriterImg = chakra(Image, {
   },
 });
 
-export const M_PortfolioWriterNameDate = chakra(Flex, {
+export const M_ProjectWriterNameDate = chakra(Flex, {
   baseStyle: {
     flexFlow: 'column',
   },
 });
 
-export const M_PortfolioWriterName = chakra(Text, {
+export const M_ProjectWriterName = chakra(Text, {
   baseStyle: {
     fontSize: '20px',
   },
 });
 
-export const M_PortfolioDate = chakra(Text, {
+export const M_ProjectDate = chakra(Text, {
   baseStyle: {
     fontSize: '14px',
   },
 });
 
-export const M_PortfolioMain = chakra(Flex, {
+export const M_ProjectMain = chakra(Flex, {
   baseStyle: {
     flexFlow: 'column',
     gap: '10px',
   },
 });
 
-export const M_PortfolioTitle = chakra(Text, {
+export const M_ProjectTitle = chakra(Text, {
   baseStyle: {
     fontSize: '22px',
     fontFamily: 'medium',
   },
 });
 
-export const M_PortfolioStacks = chakra(Flex, {
+export const M_ProjectStacks = chakra(Flex, {
   baseStyle: {
     gap: '5px',
     flexWrap: 'wrap',
   },
 });
 
-export const M_PortfolioStack = chakra(Text, {
+export const M_ProjectStack = chakra(Text, {
   baseStyle: {
     padding: '5px 8px',
     background: '#4285EB',

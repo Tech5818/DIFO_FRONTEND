@@ -5,6 +5,6 @@ export const M_WorksContainer = chakra(Flex, {
     flexFlow: 'column',
     padding: '20px',
     gap: '20px',
-    background: 'f6f6f6',
+    background: '#f6f6f6',
   },
 });

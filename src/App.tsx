@@ -3,6 +3,7 @@ import { HomePage } from './page/home/HomePage';
 import { WorksPage } from './page/works/WorksPage';
 import { Header } from './components/header/Header';
 import { Portfolio } from './page/portfolio/Portfolio';
+import { Project } from './page/project/Project';
 
 function App() {
   return (
@@ -14,6 +15,10 @@ function App() {
         <Route
           path='/works/portfolio/*'
           element={<Portfolio />}
+        />
+        <Route
+          path='/works/project/*'
+          element={<Project />}
         />
       </Routes>
     </>
