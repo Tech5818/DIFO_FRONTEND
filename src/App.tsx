@@ -1,9 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import { Header } from './components/header/Header';
-<<<<<<< HEAD
-import { Portfolio } from './page/portfolio/Portfolio';
-import { Project } from './page/project/Project';
-=======
 import loadable from '@loadable/component';
 
 const HomePage = loadable(
@@ -15,9 +11,20 @@ const WorkPage = loadable(
 );
 
 const PortfolioPage = loadable(
-  () => import('./page/portfolio/Portfolio'),
+  () => import('./page/portfolio/PortfolioPage'),
 );
->>>>>>> a3eb41d520aa99a8ea52b3e5ad1c8194bd255e89
+
+const ProjectPage = loadable(
+  () => import('./page/project/ProjectPage'),
+);
+
+const NoticeBoardsPage = loadable(
+  () => import('./page/noticeBoards/NoticeBoardsPage'),
+);
+
+const NoticeBoardPage = loadable(
+  () => import('./page/noticeBoard/NoticeBoardPage'),
+);
 
 function App() {
   return (
@@ -35,18 +42,24 @@ function App() {
           loader={WorkPage.load}
         />
         <Route
-<<<<<<< HEAD
           path='/works/portfolio/*'
-          element={<Portfolio />}
-=======
-          path='/works/portfolio'
           element={<PortfolioPage />}
           loader={PortfolioPage.load}
->>>>>>> a3eb41d520aa99a8ea52b3e5ad1c8194bd255e89
         />
         <Route
           path='/works/project/*'
-          element={<Project />}
+          element={<ProjectPage />}
+          loader={ProjectPage.load}
+        />
+        <Route
+          path='/boards'
+          element={<NoticeBoardsPage />}
+          loader={NoticeBoardsPage.load}
+        />
+        <Route
+          path='/boards/board/*'
+          element={<NoticeBoardPage />}
+          loader={NoticeBoardPage.load}
         />
       </Routes>
     </>

@@ -28,7 +28,7 @@ export const M_RecentTitleBox = chakra(Flex, {
 export const M_RecentTitle = chakra(Text, {
   baseStyle: {
     fontFamily: 'medium',
-    fontSize: '22px',
+    fontSize: '24px',
   },
 });
 
@@ -43,22 +43,36 @@ export const M_RecentPostBox = chakra(Flex, {
   baseStyle: {
     background: '#fff',
     flexFlow: 'column',
+    gap: '5px',
   },
 });
 
 export const M_RecentPostTitle = chakra(Text, {
   baseStyle: {
-    fontSize: '18px',
+    fontSize: '22px',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     height: '27px',
+    fontFamily: 'medium',
+  },
+});
+
+export const M_RecentPostWriterTime = chakra(Flex, {
+  baseStyle: {
+    gap: '10px',
+  },
+});
+
+export const M_RecentPostWriter = chakra(Text, {
+  baseStyle: {
+    fontSize: '16px',
   },
 });
 
 export const M_RecentPostTime = chakra(Text, {
   baseStyle: {
-    fontSize: '14px',
-    color: '#777',
+    fontSize: '16px',
+    color: '#ACACAC',
   },
 });

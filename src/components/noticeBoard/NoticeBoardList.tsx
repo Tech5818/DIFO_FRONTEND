@@ -1,0 +1,115 @@
+import {
+  M_NoticeBoardsListContainer,
+  M_NoticeBoardsListTab,
+  M_NoticeBoardsListTabList,
+  M_NoticeBoardsListTabPanel,
+  M_NoticeBoardsListTabPanels,
+  M_NoticeBoardsListTabs,
+} from '../../style/noticeBoards/noticeBoardsList.style';
+import { SearchBar } from '../searchBar/WorkListSearchBar';
+import { NoticeBoardItem } from './NoticeBoardItem';
+import { NoticeBoardLists } from './NoticeBoardLists';
+
+export const NoticeBoardsList = () => {
+  return (
+    <>
+      <M_NoticeBoardsListContainer>
+        <M_NoticeBoardsListTabs
+          variant='soft-rounded'
+          colorScheme='blue'
+        >
+          <M_NoticeBoardsListTabList>
+            <M_NoticeBoardsListTab>
+              최근
+            </M_NoticeBoardsListTab>
+            <M_NoticeBoardsListTab>
+              인기
+            </M_NoticeBoardsListTab>
+          </M_NoticeBoardsListTabList>
+          <M_NoticeBoardsListTabPanels>
+            <M_NoticeBoardsListTabPanel>
+              <SearchBar />
+              <NoticeBoardLists>
+                <NoticeBoardItem
+                  title='제목'
+                  writer='신권호'
+                  date='5분전'
+                />
+                <NoticeBoardItem
+                  title='제목'
+                  writer='신권호'
+                  date='5분전'
+                />
+                <NoticeBoardItem
+                  title='제목'
+                  writer='신권호'
+                  date='5분전'
+                />
+                <NoticeBoardItem
+                  title='제목'
+                  writer='신권호'
+                  date='5분전'
+                />
+                <NoticeBoardItem
+                  title='제목'
+                  writer='신권호'
+                  date='5분전'
+                />
+                <NoticeBoardItem
+                  title='제목'
+                  writer='신권호'
+                  date='5분전'
+                />
+                <NoticeBoardItem
+                  title='제목'
+                  writer='신권호'
+                  date='5분전'
+                />
+              </NoticeBoardLists>
+            </M_NoticeBoardsListTabPanel>
+            <M_NoticeBoardsListTabPanel>
+              <SearchBar />
+              <NoticeBoardLists>
+                <NoticeBoardItem
+                  title='제목'
+                  writer='신권호'
+                  date='5분전'
+                />
+                <NoticeBoardItem
+                  title='제목'
+                  writer='신권호'
+                  date='5분전'
+                />
+                <NoticeBoardItem
+                  title='제목'
+                  writer='신권호'
+                  date='5분전'
+                />
+                <NoticeBoardItem
+                  title='제목'
+                  writer='신권호'
+                  date='5분전'
+                />
+                <NoticeBoardItem
+                  title='제목'
+                  writer='신권호'
+                  date='5분전'
+                />
+                <NoticeBoardItem
+                  title='제목'
+                  writer='신권호'
+                  date='5분전'
+                />
+                <NoticeBoardItem
+                  title='제목'
+                  writer='신권호'
+                  date='5분전'
+                />
+              </NoticeBoardLists>
+            </M_NoticeBoardsListTabPanel>
+          </M_NoticeBoardsListTabPanels>
+        </M_NoticeBoardsListTabs>
+      </M_NoticeBoardsListContainer>
+    </>
+  );
+};

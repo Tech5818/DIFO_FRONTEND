@@ -1,9 +1,11 @@
 import { M_NoticeBoardContainer } from '../../style/noticeBoard/noticeBoard.style';
 
-export const NoticeBoard = () => {
+const NoticeBoardPage = () => {
   return (
     <>
       <M_NoticeBoardContainer></M_NoticeBoardContainer>
     </>
   );
 };
+
+export default NoticeBoardPage;

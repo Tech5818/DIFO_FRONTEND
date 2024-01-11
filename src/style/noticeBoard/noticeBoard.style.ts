@@ -1,5 +1,5 @@
 import { Flex, chakra } from '@chakra-ui/react';
 
-export const M_NoticeBoardContainer = chakra(Flex, {
+export const noticeBoardContainer = chakra(Flex, {
   baseStyle: {},
 });

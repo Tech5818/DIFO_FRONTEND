@@ -50,7 +50,7 @@ export const Quick = () => {
           icon={faTableColumns}
           text='게시판'
           background='#4285EB'
-          to=''
+          to='boards'
         />
         <Icon
           variants={IconVariants}
