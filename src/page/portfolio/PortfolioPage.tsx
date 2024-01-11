@@ -15,7 +15,7 @@ import {
   M_PortfolioWriterNameDate,
 } from '../../style/portfolio/portfolio.style';
 
-export const Portfolio = () => {
+const PortfolioPage = () => {
   return (
     <>
       <M_PortfolioContainer>
@@ -91,9 +91,6 @@ export const Portfolio = () => {
       </M_PortfolioContainer>
     </>
   );
-};
-const PortfolioPage = () => {
-  return <></>;
 };
 
 export default PortfolioPage;

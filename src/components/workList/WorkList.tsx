@@ -6,7 +6,7 @@ import {
   M_WorkListTabPanels,
   M_WorkListTabs,
 } from '../../style/workList/workList.style';
-import { WorkListSearchBar } from './WorkListSearchBar';
+import { SearchBar } from '../searchBar/WorkListSearchBar';
 import { WorkLists } from './WorkLists';
 import { WorkListsItem } from './WorkListsItem';
 
@@ -24,7 +24,7 @@ export const WorkList = () => {
           </M_WorkListTabList>
           <M_WorkListTabPanels>
             <M_WorkListTabPanel>
-              <WorkListSearchBar />
+              <SearchBar />
               <WorkLists>
                 <WorkListsItem
                   id='1'
@@ -84,7 +84,7 @@ export const WorkList = () => {
               </WorkLists>
             </M_WorkListTabPanel>
             <M_WorkListTabPanel>
-              <WorkListSearchBar />
+              <SearchBar />
               <WorkLists>
                 <WorkListsItem
                   id='1'

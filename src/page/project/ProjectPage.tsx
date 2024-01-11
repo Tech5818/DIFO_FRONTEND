@@ -15,7 +15,7 @@ import {
   M_ProjectWriterNameDate,
 } from '../../style/project/project.style';
 
-export const Project = () => {
+const ProjectPage = () => {
   return (
     <>
       <M_ProjectContainer>
@@ -80,3 +80,5 @@ export const Project = () => {
     </>
   );
 };
+
+export default ProjectPage;
