@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import {
   M_NoticeBoardsItem,
   M_NoticeBoardsItemDate,
@@ -7,19 +8,31 @@ import {
 } from '../../style/noticeBoards/noticeBoardsLists.style';
 
 interface NoticeBoardItemProps {
+  id: string;
   title: string;
   writer: string;
   date: string;
 }
 
 export const NoticeBoardItem = ({
+  id,
   title,
   writer,
   date,
 }: NoticeBoardItemProps) => {
+  const navigation = useNavigate();
+
+  const handleToBoard = (boardId: string) => {
+    navigation(`/boards/board?${boardId}`);
+  };
+
   return (
     <>
-      <M_NoticeBoardsItem>
+      <M_NoticeBoardsItem
+        onClick={() => {
+          handleToBoard(id);
+        }}
+      >
         <M_NoticeBoardsItemTitle>
           {title}
         </M_NoticeBoardsItemTitle>

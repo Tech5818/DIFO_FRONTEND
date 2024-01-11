@@ -2,10 +2,9 @@ import { Flex, Text, chakra } from '@chakra-ui/react';
 
 export const M_NoticeBoardsListsContainer = chakra(Flex, {
   baseStyle: {
-    marginTop: '20px',
     flexFlow: 'column',
     gap: '20px',
-    maxHeight: '550px',
+    height: '600px',
     overflowY: 'scroll',
   },
 });

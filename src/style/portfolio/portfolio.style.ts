@@ -16,7 +16,7 @@ export const M_PortfolioContainer = chakra(Flex, {
 export const M_PortfolioBox = chakra(Flex, {
   baseStyle: {
     background: '#fff',
-    boxShadow: '0 0 20px -10px rgba(0, 0, 0, 0.5)',
+    boxShadow: '0 4px 8px rgba(218, 226, 237, 0.6)',
     padding: '20px',
     flexFlow: 'column',
     gap: '10px',

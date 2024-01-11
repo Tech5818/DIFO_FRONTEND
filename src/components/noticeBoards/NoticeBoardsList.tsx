@@ -6,9 +6,8 @@ import {
   M_NoticeBoardsListTabPanels,
   M_NoticeBoardsListTabs,
 } from '../../style/noticeBoards/noticeBoardsList.style';
-import { SearchBar } from '../searchBar/WorkListSearchBar';
-import { NoticeBoardItem } from './NoticeBoardItem';
-import { NoticeBoardLists } from './NoticeBoardLists';
+import { NoticeBoardItem } from './NoticeBoardsItem';
+import { NoticeBoardLists } from './NoticeBoardsLists';
 
 export const NoticeBoardsList = () => {
   return (
@@ -28,39 +27,45 @@ export const NoticeBoardsList = () => {
           </M_NoticeBoardsListTabList>
           <M_NoticeBoardsListTabPanels>
             <M_NoticeBoardsListTabPanel>
-              <SearchBar />
               <NoticeBoardLists>
                 <NoticeBoardItem
+                  id='1'
                   title='제목'
                   writer='신권호'
                   date='5분전'
                 />
                 <NoticeBoardItem
+                  id='1'
                   title='제목'
                   writer='신권호'
                   date='5분전'
                 />
                 <NoticeBoardItem
+                  id='1'
                   title='제목'
                   writer='신권호'
                   date='5분전'
                 />
                 <NoticeBoardItem
+                  id='1'
                   title='제목'
                   writer='신권호'
                   date='5분전'
                 />
                 <NoticeBoardItem
+                  id='1'
                   title='제목'
                   writer='신권호'
                   date='5분전'
                 />
                 <NoticeBoardItem
+                  id='1'
                   title='제목'
                   writer='신권호'
                   date='5분전'
                 />
                 <NoticeBoardItem
+                  id='1'
                   title='제목'
                   writer='신권호'
                   date='5분전'
@@ -68,39 +73,45 @@ export const NoticeBoardsList = () => {
               </NoticeBoardLists>
             </M_NoticeBoardsListTabPanel>
             <M_NoticeBoardsListTabPanel>
-              <SearchBar />
               <NoticeBoardLists>
                 <NoticeBoardItem
+                  id='1'
                   title='제목'
                   writer='신권호'
                   date='5분전'
                 />
                 <NoticeBoardItem
+                  id='1'
                   title='제목'
                   writer='신권호'
                   date='5분전'
                 />
                 <NoticeBoardItem
+                  id='1'
                   title='제목'
                   writer='신권호'
                   date='5분전'
                 />
                 <NoticeBoardItem
+                  id='1'
                   title='제목'
                   writer='신권호'
                   date='5분전'
                 />
                 <NoticeBoardItem
+                  id='1'
                   title='제목'
                   writer='신권호'
                   date='5분전'
                 />
                 <NoticeBoardItem
+                  id='1'
                   title='제목'
                   writer='신권호'
                   date='5분전'
                 />
                 <NoticeBoardItem
+                  id='1'
                   title='제목'
                   writer='신권호'
                   date='5분전'
