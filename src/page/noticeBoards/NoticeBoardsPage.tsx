@@ -1,4 +1,4 @@
-import { NoticeBoardsList } from '../../components/noticeBoard/NoticeBoardList';
+import { NoticeBoardsList } from '../../components/noticeBoards/NoticeBoardsList';
 import {
   M_NoticeBoardsButton,
   M_NoticeBoardsContainer,
