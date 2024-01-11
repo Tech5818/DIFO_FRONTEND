@@ -8,6 +8,7 @@ import {
 } from '../../style/workList/workList.style';
 import { WorkListSearchBar } from './WorkListSearchBar';
 import { WorkLists } from './WorkLists';
+import { WorkListsItem } from './WorkListsItem';
 
 export const WorkList = () => {
   return (
@@ -24,11 +25,73 @@ export const WorkList = () => {
           <M_WorkListTabPanels>
             <M_WorkListTabPanel>
               <WorkListSearchBar />
-              <WorkLists />
+              <WorkLists>
+                <WorkListsItem
+                  title='제목이당'
+                  writer='신권호'
+                  date='5분전'
+                />
+                <WorkListsItem
+                  title='제목이당'
+                  writer='신권호'
+                  date='5분전'
+                />
+                <WorkListsItem
+                  title='제목이당'
+                  writer='신권호'
+                  date='5분전'
+                />
+                <WorkListsItem
+                  title='제목이당'
+                  writer='신권호'
+                  date='5분전'
+                />
+                <WorkListsItem
+                  title='제목이당'
+                  writer='신권호'
+                  date='5분전'
+                />
+                <WorkListsItem
+                  title='제목이당'
+                  writer='신권호'
+                  date='5분전'
+                />
+                <WorkListsItem
+                  title='제목이당'
+                  writer='신권호'
+                  date='5분전'
+                />
+              </WorkLists>
             </M_WorkListTabPanel>
             <M_WorkListTabPanel>
               <WorkListSearchBar />
-              <WorkLists />
+              <WorkLists>
+                <WorkListsItem
+                  title='제목이당'
+                  writer='신권호'
+                  date='5분전'
+                />
+                <WorkListsItem
+                  title='제목이당'
+                  writer='신권호'
+                  date='5분전'
+                />
+                <WorkListsItem
+                  title='제목이당'
+                  writer='신권호'
+                  date='5분전'
+                />
+                <WorkListsItem
+                  title='제목이당'
+                  writer='신권호'
+                  date='5분전'
+                />
+                <WorkListsItem
+                  title='제목이당'
+                  writer='신권호'
+                  date='5분전'
+                />
+              </WorkLists>
             </M_WorkListTabPanel>
           </M_WorkListTabPanels>
         </M_WorkListTabs>
