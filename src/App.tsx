@@ -39,6 +39,14 @@ const MessagePage = loadable(
   () => import('./page/message/MessagePage'),
 );
 
+const PortfolioWritePage = loadable(
+  () => import('./page/portfolioWrite/PortfolioWritePage'),
+);
+
+const ProjectWritePage = loadable(
+  () => import('./page/projectWrite/ProjectWritePage'),
+);
+
 function App() {
   return (
     <>
@@ -88,6 +96,16 @@ function App() {
           path='/messageList/message/*'
           element={<MessagePage />}
           loader={MessagePage.load}
+        />
+        <Route
+          path='/works/portfolio/write'
+          element={<PortfolioWritePage />}
+          loader={PortfolioWritePage.load}
+        />
+        <Route
+          path='/works/project/write'
+          element={<ProjectWritePage />}
+          loader={ProjectWritePage.load}
         />
       </Routes>
     </>

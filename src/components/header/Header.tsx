@@ -17,10 +17,10 @@ import {
   faBars,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Context } from '../../Provider';
 import { MenuItem } from './MenuItem';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const variants = {
   open: {
@@ -39,10 +39,17 @@ const variants = {
 
 export const Header = () => {
   const { onMenu, setOnMenu } = useContext(Context);
+  const [menu, setMenu] = useState('');
+
+  const location = useLocation();
 
   const handleMenu = () => {
     setOnMenu(!onMenu);
   };
+
+  useEffect(() => {
+    setMenu(location.pathname);
+  }, [location]);
 
   return (
     <>
@@ -96,9 +103,36 @@ export const Header = () => {
         <P_HeaderContainer>
           <Logo />
           <P_HeaderGNB>
-            <P_HeaderMenu>포트폴리오</P_HeaderMenu>
-            <P_HeaderMenu>프로젝트</P_HeaderMenu>
-            <P_HeaderMenu>게시물</P_HeaderMenu>
+            <P_HeaderMenu
+              to='/works/portfolio/write'
+              color={
+                menu === '/works/portfolio/write'
+                  ? '#4285EB'
+                  : ''
+              }
+              fontFamily={
+                menu === '/works/portfolio/write'
+                  ? 'medium'
+                  : ''
+              }
+            >
+              포트폴리오
+            </P_HeaderMenu>
+            <P_HeaderMenu
+              to='/works/project/write'
+              color={
+                menu === '/works/project/write'
+                  ? '#4285EB'
+                  : ''
+              }
+              fontFamily={
+                menu === '/works/project/write'
+                  ? 'medium'
+                  : ''
+              }
+            >
+              프로젝트
+            </P_HeaderMenu>
           </P_HeaderGNB>
         </P_HeaderContainer>
       </PC>

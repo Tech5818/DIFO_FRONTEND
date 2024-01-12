@@ -8,3 +8,9 @@ export const M_WorksContainer = chakra(Flex, {
     background: '#f6f6f6',
   },
 });
+
+export const P_WorksContainer = chakra(Flex, {
+  baseStyle: {
+    padding: '20px',
+  },
+});

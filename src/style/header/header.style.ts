@@ -1,6 +1,7 @@
-import { Box, Flex, Text, chakra } from '@chakra-ui/react';
+import { Box, Flex, chakra } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 /**
  * @todo 모바일 Header components
@@ -76,6 +77,7 @@ export const P_HeaderContainer = chakra(Flex, {
     alignItems: 'center',
     padding: '0 20px',
     justifyContent: 'space-between',
+    zIndex: 1,
   },
 });
 
@@ -85,9 +87,10 @@ export const P_HeaderGNB = chakra(Flex, {
   },
 });
 
-export const P_HeaderMenu = chakra(Text, {
+export const P_HeaderMenu = chakra(Link, {
   baseStyle: {
     cursor: 'pointer',
+    fontSize: '18px',
     _hover: {
       color: '#4285EB',
       fontFamily: 'medium',
