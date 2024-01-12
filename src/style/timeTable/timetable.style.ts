@@ -48,11 +48,11 @@ export const M_TimeTableTr = chakra(Tr, {
 
 export const M_TimeTableTh = chakra(Th, {
   baseStyle: {
-    fontSize: '14px',
+    fontSize: '12px',
     padding: '10px 3px',
     textAlign: 'center',
     width: 'calc(100% / 6)',
-    letterSpacing: '-0.15rem',
+    letterSpacing: '-0.23rem',
   },
 });
 
