@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Comment } from '../../components/comment/Comment';
 import { CommnetItem } from '../../components/comment/CommentItem';
-import { Recommend } from '../../components/recommend/Recommend';
+
 import {
   M_PortfolioBox,
   M_PortfolioContainer,
@@ -20,8 +20,6 @@ import { useParams } from 'react-router-dom';
 
 const PortfolioPage = () => {
   const { portfolioId } = useParams();
-  const [portfolioDetails, setPortfolioDetails] =
-    useState();
 
   useEffect(() => {
     const getDetailsData = async () => {
@@ -74,7 +72,6 @@ const PortfolioPage = () => {
             </M_PortfolioStacks>
           </M_PortfolioMain>
         </M_PortfolioBox>
-        <Recommend />
         <Comment>
           <CommnetItem
             writer='이선우'
