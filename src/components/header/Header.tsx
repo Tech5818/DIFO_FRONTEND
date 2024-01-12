@@ -1,4 +1,4 @@
-import { Mobile } from '../../Responsive';
+import { Mobile, PC } from '../../Responsive';
 import {
   M_CLOSE_BTN,
   M_Header,
@@ -6,6 +6,9 @@ import {
   M_Layer,
   M_MENU_NAV,
   M_Menu,
+  P_HeaderContainer,
+  P_HeaderGNB,
+  P_HeaderMenu,
 } from '../../style/header/header.style';
 import { Logo } from '../Logo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -89,6 +92,16 @@ export const Header = () => {
           </M_Menu>
         </M_Layer>
       </Mobile>
+      <PC>
+        <P_HeaderContainer>
+          <Logo />
+          <P_HeaderGNB>
+            <P_HeaderMenu>포트폴리오</P_HeaderMenu>
+            <P_HeaderMenu>프로젝트</P_HeaderMenu>
+            <P_HeaderMenu>게시물</P_HeaderMenu>
+          </P_HeaderGNB>
+        </P_HeaderContainer>
+      </PC>
     </>
   );
 };
