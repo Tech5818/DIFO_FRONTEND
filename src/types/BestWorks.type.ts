@@ -36,4 +36,4 @@ export type Stack = {
   stackName: string;
 };
 
-export type bestWorks = portfolio | project;
+export type bestWorks = portfolio & project;

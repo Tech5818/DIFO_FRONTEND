@@ -1,11 +1,7 @@
-import { Mobile, PC } from '../../Responsive';
+import { Mobile } from '../../Responsive';
 import { BestWorks } from '../../components/bestWorks/BestWorks';
 import { WorkList } from '../../components/workList/WorkList';
-import {
-  M_WorksContainer,
-  P_WorksContainer,
-} from '../../style/works/works.style';
-import { Editor } from '@toast-ui/react-editor';
+import { M_WorksContainer } from '../../style/works/works.style';
 
 const WorksPage = () => {
   return (

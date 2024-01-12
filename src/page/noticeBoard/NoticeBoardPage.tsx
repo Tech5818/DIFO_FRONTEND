@@ -35,7 +35,12 @@ const NoticeBoardPage = () => {
             <M_NoticeBoardText>본문본문</M_NoticeBoardText>
           </M_NoticeBoardMain>
         </M_NoticeBoardBox>
-        <Recommend />
+        <Recommend
+          likes={0}
+          likeButtonClickHandler={function (): void {
+            throw new Error('Function not implemented.');
+          }}
+        />
         <Comment>
           <CommnetItem
             writer='이선우'

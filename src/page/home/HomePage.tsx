@@ -1,4 +1,4 @@
-import { Mobile, PC } from '../../Responsive';
+import { Mobile } from '../../Responsive';
 import { Quick } from '../../components/quick/Quick';
 import { Recent } from '../../components/recent/Recent';
 import { TimeTable } from '../../components/timeTable/TimeTable';
@@ -34,7 +34,6 @@ const HomePage = () => {
           <TimeTable variants={itemAnimation} />
         </M_HomeContent>
       </Mobile>
-      <PC></PC>
     </>
   );
 };
