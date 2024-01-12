@@ -1,3 +1,4 @@
+import { Mobile } from '../../Responsive';
 import {
   M_CommentLeaveContainer,
   M_CommentLeaveInput,
