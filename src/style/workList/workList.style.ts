@@ -7,9 +7,11 @@ import {
   Tabs,
   chakra,
 } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 
-export const M_WorkListContainer = chakra(Flex, {
+export const M_WorkListContainer = chakra(motion.div, {
   baseStyle: {
+    display: 'flex',
     width: '100%',
     flexFlow: 'column',
     padding: '20px',

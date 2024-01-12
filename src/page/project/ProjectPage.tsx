@@ -47,6 +47,7 @@ type projectProps = {
 
 const ProjectPage = () => {
   const { projectId } = useParams();
+  console.log(projectId);
   const [portfolioDetails, setPortfolioDetails] =
     useState<projectProps>();
 
@@ -60,7 +61,7 @@ const ProjectPage = () => {
     };
 
     getDetailsData();
-  }, [portfolioDetails]);
+  }, []);
 
   const likeButtonClickHandler = async () => {
     await postProjectLike(parseInt(projectId!));

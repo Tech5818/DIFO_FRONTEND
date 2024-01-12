@@ -18,6 +18,14 @@ export const getProjectDetails = async (
   return res.data.data;
 };
 
+export const getRecentProjects = async () => {
+  const res = await axios.get(
+    'https://difo-server-7bc245dc68fb.herokuapp.com/api/v1/project/all',
+  );
+
+  return res.data.data;
+};
+
 export const postProjectLike = async (
   projectId: number,
 ) => {
