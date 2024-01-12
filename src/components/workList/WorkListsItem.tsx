@@ -52,9 +52,6 @@ export const WorkListsItem = ({
           </M_WorkListsStacks>
           <M_WorkListsWriterTime>
             <M_WorkListsWriter>{writer}</M_WorkListsWriter>
-            <M_WorkListsTime>
-              {date.toDateString()}
-            </M_WorkListsTime>
           </M_WorkListsWriterTime>
         </M_WorkListsInfos>
       </M_WorkLists>
