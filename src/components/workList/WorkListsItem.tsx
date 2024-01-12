@@ -9,14 +9,15 @@ import {
   M_WorkListsWriter,
   M_WorkListsWriterTime,
 } from '../../style/workList/workLists.style';
+import { Stack } from '../../types/BestWorks.type';
 
 interface WorkListsItem {
-  id: string;
+  id: number;
   type: string;
   title: string;
   writer: string;
-  date: string;
-  stacks: string[];
+  date: number;
+  stacks?: Stack[];
 }
 
 export const WorkListsItem = ({
@@ -36,17 +37,18 @@ export const WorkListsItem = ({
     <>
       <M_WorkLists
         onClick={() => {
-          handleToWorks(id);
+          handleToWorks(id.toString());
         }}
       >
         <M_WorkListsTitle>{title}</M_WorkListsTitle>
         <M_WorkListsInfos>
           <M_WorkListsStacks>
-            {stacks.map((element, idx) => (
-              <M_WorkListsStack key={idx}>
-                {element}
-              </M_WorkListsStack>
-            ))}
+            {!!stacks &&
+              stacks.map((element, idx) => (
+                <M_WorkListsStack key={idx}>
+                  {element.stackName}
+                </M_WorkListsStack>
+              ))}
           </M_WorkListsStacks>
           <M_WorkListsWriterTime>
             <M_WorkListsWriter>{writer}</M_WorkListsWriter>

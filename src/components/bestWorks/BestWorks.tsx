@@ -9,7 +9,10 @@ import {
   M_BestWorksContents,
   M_BestWorksTitle,
 } from '../../style/bestWorks/bestWorks.style';
-import { bestWorks } from '../../types/BestWorks.type';
+import {
+  bestWorks,
+  portfolio,
+} from '../../types/BestWorks.type';
 import { getPortfoliosByRecommend } from '../../apis/Portfolio';
 import { getProjectByRecommend } from '../../apis/Project';
 import { Link } from 'react-router-dom';

@@ -26,7 +26,7 @@ const PortfolioPage = () => {
   useEffect(() => {
     const getDetailsData = async () => {
       const res = await getPortfolioDetails(
-        parseInt(portfolioId),
+        parseInt(portfolioId!),
       );
 
       console.log(res.data);

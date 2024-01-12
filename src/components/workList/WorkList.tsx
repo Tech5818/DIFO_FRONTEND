@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Mobile } from '../../Responsive';
 import {
   M_WorkListContainer,
@@ -10,12 +11,54 @@ import {
 import { SearchBar } from '../searchBar/WorkListSearchBar';
 import { WorkLists } from './WorkLists';
 import { WorkListsItem } from './WorkListsItem';
+import {
+  portfolio,
+  project,
+} from '../../types/BestWorks.type';
+import { getRecentPortfolio } from '../../apis/Portfolio';
+import { Link } from 'react-router-dom';
+import { getRecentProjects } from '../../apis/Project';
+
+const containerAnimation = {
+  close: { opacity: 0 },
+  open: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+      delayChildren: 3,
+    },
+  },
+};
 
 export const WorkList = () => {
+  const [recentPortfolios, setRecentPortfolios] =
+    useState<portfolio[]>();
+  const [recentProjects, setRecentProjects] =
+    useState<project[]>();
+
+  useEffect(() => {
+    const getRecentPortfolioData = async () => {
+      const res = await getRecentPortfolio();
+      setRecentPortfolios(res);
+    };
+
+    const getRecentProjectData = async () => {
+      const res = await getRecentProjects();
+      setRecentProjects(res);
+    };
+
+    getRecentPortfolioData();
+    getRecentProjectData();
+  }, []);
+
   return (
     <>
       <Mobile>
-        <M_WorkListContainer>
+        <M_WorkListContainer
+          initial='close'
+          animate='open'
+          variants={containerAnimation}
+        >
           <M_WorkListTabs
             variant='soft-rounded'
             colorScheme='blue'
@@ -28,114 +71,50 @@ export const WorkList = () => {
               <M_WorkListTabPanel>
                 <SearchBar />
                 <WorkLists>
-                  <WorkListsItem
-                    id='1'
-                    title='제목이당당당당당당당한 대통령 홍준표'
-                    writer='신권호'
-                    date='5분전'
-                    stacks={[
-                      '프론트엔드',
-                      '백엔드',
-                      '리액트',
-                      'express',
-                      'awt',
-                      'nextjs',
-                    ]}
-                    type='portfolio'
-                  />
-                  <WorkListsItem
-                    id='1'
-                    title='제목이당'
-                    writer='신권호'
-                    date='5분전'
-                    stacks={['프론트엔드', '백엔드']}
-                    type='portfolio'
-                  />
-                  <WorkListsItem
-                    id='1'
-                    title='제목이당'
-                    writer='신권호'
-                    date='5분전'
-                    type='portfolio'
-                    stacks={['프론트엔드', '백엔드']}
-                  />
-                  <WorkListsItem
-                    id='1'
-                    title='제목이당'
-                    writer='신권호'
-                    date='5분전'
-                    stacks={['프론트엔드', '백엔드']}
-                    type='portfolio'
-                  />
-                  <WorkListsItem
-                    id='1'
-                    title='제목이당'
-                    writer='신권호'
-                    date='5분전'
-                    stacks={['프론트엔드', '백엔드']}
-                    type='portfolio'
-                  />
-                  <WorkListsItem
-                    id='1'
-                    title='제목이당'
-                    writer='신권호'
-                    date='5분전'
-                    stacks={['프론트엔드', '백엔드']}
-                    type='portfolio'
-                  />
+                  {!!recentPortfolios &&
+                    recentPortfolios?.map(
+                      (portfolio, idx) => {
+                        return (
+                          <Link
+                            key={idx}
+                            to={`/works/portfolio/${portfolio.portfolioId}`}
+                          >
+                            <WorkListsItem
+                              id={portfolio.portfolioId}
+                              title={
+                                portfolio.portfolioTitle
+                              }
+                              writer={`#${portfolio.memberId}`}
+                              date={portfolio.createdDate.toString()}
+                              type='portfolio'
+                            />
+                          </Link>
+                        );
+                      },
+                    )}
                 </WorkLists>
               </M_WorkListTabPanel>
               <M_WorkListTabPanel>
                 <SearchBar />
                 <WorkLists>
-                  <WorkListsItem
-                    id='1'
-                    title='제목이당'
-                    writer='신권호'
-                    date='5분전'
-                    stacks={['프론트엔드', '백엔드']}
-                    type='project'
-                  />
-                  <WorkListsItem
-                    id='1'
-                    title='제목이당'
-                    writer='신권호'
-                    date='5분전'
-                    stacks={['프론트엔드', '백엔드']}
-                    type='project'
-                  />
-                  <WorkListsItem
-                    id='1'
-                    title='제목이당'
-                    writer='신권호'
-                    date='5분전'
-                    stacks={['프론트엔드', '백엔드']}
-                    type='project'
-                  />
-                  <WorkListsItem
-                    id='1'
-                    title='제목이당'
-                    writer='신권호'
-                    date='5분전'
-                    stacks={['프론트엔드', '백엔드']}
-                    type='project'
-                  />
-                  <WorkListsItem
-                    id='1'
-                    title='제목이당'
-                    writer='신권호'
-                    date='5분전'
-                    stacks={['프론트엔드', '백엔드']}
-                    type='project'
-                  />
-                  <WorkListsItem
-                    id='1'
-                    title='제목이당'
-                    writer='신권호'
-                    date='5분전'
-                    stacks={['프론트엔드', '백엔드']}
-                    type='project'
-                  />
+                  {!!recentProjects &&
+                    recentProjects.map((project, idx) => {
+                      return (
+                        <Link
+                          key={idx}
+                          to={`/works/project/${project.projectId}`}
+                        >
+                          <WorkListsItem
+                            id={project.projectId}
+                            title={project.projectName}
+                            writer={`#${project.projectId}`}
+                            type='project'
+                            date={project.startDate.toString()}
+                            stacks={project.stacks}
+                          />
+                        </Link>
+                      );
+                    })}
                 </WorkLists>
               </M_WorkListTabPanel>
             </M_WorkListTabPanels>
