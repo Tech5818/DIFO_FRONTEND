@@ -4,7 +4,6 @@ import {
   M_WorkListsInfos,
   M_WorkListsStack,
   M_WorkListsStacks,
-  M_WorkListsTime,
   M_WorkListsTitle,
   M_WorkListsWriter,
   M_WorkListsWriterTime,
@@ -16,7 +15,6 @@ interface WorkListsItem {
   type: string;
   title: string;
   writer: string;
-  date: Date;
   stacks?: Stack[];
 }
 
@@ -25,7 +23,6 @@ export const WorkListsItem = ({
   type,
   title,
   writer,
-  date,
   stacks,
 }: WorkListsItem) => {
   const navigator = useNavigate();

@@ -101,7 +101,6 @@ export const WorkList = () => {
                                 portfolio.portfolioTitle
                               }
                               writer={`#${portfolio.memberId}`}
-                              date={portfolio.createdDate}
                               type='portfolio'
                             />
                           </Link>
@@ -139,7 +138,6 @@ export const WorkList = () => {
                             title={project.projectName}
                             writer={`#${project.projectId}`}
                             type='project'
-                            date={project.startDate.toString()}
                             stacks={project.stacks}
                           />
                         </Link>
