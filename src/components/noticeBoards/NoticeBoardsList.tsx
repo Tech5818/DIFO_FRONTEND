@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Mobile } from '../../Responsive';
 import {
   M_NoticeBoardsListContainer,
@@ -9,8 +10,29 @@ import {
 } from '../../style/noticeBoards/noticeBoardsList.style';
 import { NoticeBoardItem } from './NoticeBoardsItem';
 import { NoticeBoardLists } from './NoticeBoardsLists';
+import { getBoards } from '../../apis/Board';
+
+type boardProps = {
+  boardId: number;
+  title: string;
+  contents: string;
+  author: string;
+  time: Date;
+  likes: number;
+};
 
 export const NoticeBoardsList = () => {
+  const [boards, setBoards] = useState<boardProps[]>();
+
+  useEffect(() => {
+    const getBoardsData = async () => {
+      const response = await getBoards();
+      setBoards(response.data);
+    };
+
+    getBoardsData();
+  });
+
   return (
     <>
       <Mobile>
@@ -30,94 +52,22 @@ export const NoticeBoardsList = () => {
             <M_NoticeBoardsListTabPanels>
               <M_NoticeBoardsListTabPanel>
                 <NoticeBoardLists>
-                  <NoticeBoardItem
-                    id='1'
-                    title='제목'
-                    writer='신권호'
-                    date='5분전'
-                  />
-                  <NoticeBoardItem
-                    id='1'
-                    title='제목'
-                    writer='신권호'
-                    date='5분전'
-                  />
-                  <NoticeBoardItem
-                    id='1'
-                    title='제목'
-                    writer='신권호'
-                    date='5분전'
-                  />
-                  <NoticeBoardItem
-                    id='1'
-                    title='제목'
-                    writer='신권호'
-                    date='5분전'
-                  />
-                  <NoticeBoardItem
-                    id='1'
-                    title='제목'
-                    writer='신권호'
-                    date='5분전'
-                  />
-                  <NoticeBoardItem
-                    id='1'
-                    title='제목'
-                    writer='신권호'
-                    date='5분전'
-                  />
-                  <NoticeBoardItem
-                    id='1'
-                    title='제목'
-                    writer='신권호'
-                    date='5분전'
-                  />
-                </NoticeBoardLists>
-              </M_NoticeBoardsListTabPanel>
-              <M_NoticeBoardsListTabPanel>
-                <NoticeBoardLists>
-                  <NoticeBoardItem
-                    id='1'
-                    title='제목'
-                    writer='신권호'
-                    date='5분전'
-                  />
-                  <NoticeBoardItem
-                    id='1'
-                    title='제목'
-                    writer='신권호'
-                    date='5분전'
-                  />
-                  <NoticeBoardItem
-                    id='1'
-                    title='제목'
-                    writer='신권호'
-                    date='5분전'
-                  />
-                  <NoticeBoardItem
-                    id='1'
-                    title='제목'
-                    writer='신권호'
-                    date='5분전'
-                  />
-                  <NoticeBoardItem
-                    id='1'
-                    title='제목'
-                    writer='신권호'
-                    date='5분전'
-                  />
-                  <NoticeBoardItem
-                    id='1'
-                    title='제목'
-                    writer='신권호'
-                    date='5분전'
-                  />
-                  <NoticeBoardItem
-                    id='1'
-                    title='제목'
-                    writer='신권호'
-                    date='5분전'
-                  />
+                  {!!boards && boards?.length === 0 && (
+                    <h3>아직 게시글이 없네요ㅠㅠ</h3>
+                  )}
+                  {!!boards &&
+                    boards.length !== 0 &&
+                    boards.map((board, idx) => {
+                      return (
+                        <NoticeBoardItem
+                          key={idx}
+                          id={board.boardId}
+                          title={board.title}
+                          writer={board.author}
+                          date={board.time.toDateString()}
+                        />
+                      );
+                    })}
                 </NoticeBoardLists>
               </M_NoticeBoardsListTabPanel>
             </M_NoticeBoardsListTabPanels>

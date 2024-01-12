@@ -8,7 +8,7 @@ import {
 } from '../../style/noticeBoards/noticeBoardsLists.style';
 
 interface NoticeBoardItemProps {
-  id: string;
+  id: number;
   title: string;
   writer: string;
   date: string;
@@ -22,7 +22,7 @@ export const NoticeBoardItem = ({
 }: NoticeBoardItemProps) => {
   const navigation = useNavigate();
 
-  const handleToBoard = (boardId: string) => {
+  const handleToBoard = (boardId: number) => {
     navigation(`/boards/board?${boardId}`);
   };
 

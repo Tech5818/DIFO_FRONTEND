@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { NoticeBoardsList } from '../../components/noticeBoards/NoticeBoardsList';
+import { NoticeBoardsList } from '../../../components/noticeBoards/NoticeBoardsList';
 import {
   M_NoticeBoardsButton,
   M_NoticeBoardsContainer,
@@ -7,7 +7,7 @@ import {
   M_NoticeBoardsWriteText,
   M_NoticeBoardsWriteTextImpact,
   M_NoticeBoardsWriteTexts,
-} from '../../style/noticeBoards/noticeBoards.style';
+} from '../../../style/noticeBoards/noticeBoards.style';
 
 const NoticeBoardsPage = () => {
   const navigator = useNavigate();

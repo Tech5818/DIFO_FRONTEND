@@ -19,7 +19,10 @@ const ProjectPage = loadable(
 );
 
 const NoticeBoardsPage = loadable(
-  () => import('./page/noticeBoards/NoticeBoardsPage'),
+  () =>
+    import(
+      './page/noticeBoard/noticeBoards/NoticeBoardsPage'
+    ),
 );
 
 const NoticeBoardPage = loadable(
