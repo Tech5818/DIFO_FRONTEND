@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react';
 import { Mobile } from '../../Responsive';
 import {
   M_WorkListContainer,
+  M_WorkListItemSkeleton,
   M_WorkListTab,
   M_WorkListTabList,
   M_WorkListTabPanel,
   M_WorkListTabPanels,
   M_WorkListTabs,
+  M_WorkToWriteButton,
 } from '../../style/workList/workList.style';
 import { SearchBar } from '../searchBar/WorkListSearchBar';
 import { WorkLists } from './WorkLists';
@@ -70,7 +72,21 @@ export const WorkList = () => {
             <M_WorkListTabPanels>
               <M_WorkListTabPanel>
                 <SearchBar />
+                <Link to='/works/portfolio/write'>
+                  <M_WorkToWriteButton colorScheme='messenger'>
+                    포트폴리오 쓰러가기
+                  </M_WorkToWriteButton>
+                </Link>
                 <WorkLists>
+                  {!recentPortfolios && (
+                    <>
+                      <M_WorkListItemSkeleton />
+                      <M_WorkListItemSkeleton />
+                      <M_WorkListItemSkeleton />
+                      <M_WorkListItemSkeleton />
+                      <M_WorkListItemSkeleton />
+                    </>
+                  )}
                   {!!recentPortfolios &&
                     recentPortfolios?.map(
                       (portfolio, idx) => {
@@ -96,7 +112,21 @@ export const WorkList = () => {
               </M_WorkListTabPanel>
               <M_WorkListTabPanel>
                 <SearchBar />
+                <Link to='/works/project/write'>
+                  <M_WorkToWriteButton colorScheme='messenger'>
+                    프로젝트 쓰러가기
+                  </M_WorkToWriteButton>
+                </Link>
                 <WorkLists>
+                  {!recentProjects && (
+                    <>
+                      <M_WorkListItemSkeleton />
+                      <M_WorkListItemSkeleton />
+                      <M_WorkListItemSkeleton />
+                      <M_WorkListItemSkeleton />
+                      <M_WorkListItemSkeleton />
+                    </>
+                  )}
                   {!!recentProjects &&
                     recentProjects.map((project, idx) => {
                       return (

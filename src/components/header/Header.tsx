@@ -1,4 +1,4 @@
-import { Mobile } from '../../Responsive';
+import { Mobile, PC } from '../../Responsive';
 import {
   M_CLOSE_BTN,
   M_Header,
@@ -6,6 +6,9 @@ import {
   M_Layer,
   M_MENU_NAV,
   M_Menu,
+  P_HeaderContainer,
+  P_HeaderGNB,
+  P_HeaderMenu,
 } from '../../style/header/header.style';
 import { Logo } from '../Logo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,10 +17,10 @@ import {
   faBars,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Context } from '../../Provider';
 import { MenuItem } from './MenuItem';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const variants = {
   open: {
@@ -36,10 +39,17 @@ const variants = {
 
 export const Header = () => {
   const { onMenu, setOnMenu } = useContext(Context);
+  const [menu, setMenu] = useState('');
+
+  const location = useLocation();
 
   const handleMenu = () => {
     setOnMenu(!onMenu);
   };
+
+  useEffect(() => {
+    setMenu(location.pathname);
+  }, [location]);
 
   return (
     <>
@@ -89,6 +99,43 @@ export const Header = () => {
           </M_Menu>
         </M_Layer>
       </Mobile>
+      <PC>
+        <P_HeaderContainer>
+          <Logo />
+          <P_HeaderGNB>
+            <P_HeaderMenu
+              to='/works/portfolio/write'
+              color={
+                menu === '/works/portfolio/write'
+                  ? '#4285EB'
+                  : ''
+              }
+              fontFamily={
+                menu === '/works/portfolio/write'
+                  ? 'medium'
+                  : ''
+              }
+            >
+              포트폴리오
+            </P_HeaderMenu>
+            <P_HeaderMenu
+              to='/works/project/write'
+              color={
+                menu === '/works/project/write'
+                  ? '#4285EB'
+                  : ''
+              }
+              fontFamily={
+                menu === '/works/project/write'
+                  ? 'medium'
+                  : ''
+              }
+            >
+              프로젝트
+            </P_HeaderMenu>
+          </P_HeaderGNB>
+        </P_HeaderContainer>
+      </PC>
     </>
   );
 };

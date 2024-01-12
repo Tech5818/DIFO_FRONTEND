@@ -1,4 +1,7 @@
 import {
+  Button,
+  Flex,
+  Skeleton,
   Tab,
   TabList,
   TabPanel,
@@ -21,7 +24,10 @@ export const M_WorkListContainer = chakra(motion.div, {
 });
 
 export const M_WorkListTabs = chakra(Tabs, {
-  baseStyle: {},
+  baseStyle: {
+    display: 'flex',
+    flexFlow: 'column',
+  },
 });
 
 export const M_WorkListTabList = chakra(TabList, {
@@ -39,5 +45,20 @@ export const M_WorkListTabPanels = chakra(TabPanels, {
 export const M_WorkListTabPanel = chakra(TabPanel, {
   baseStyle: {
     padding: '20px 0',
+  },
+});
+
+export const M_WorkListItemSkeleton = chakra(Skeleton, {
+  baseStyle: {
+    width: '100%',
+    height: '72px',
+    borderRadius: '10px',
+  },
+});
+
+export const M_WorkToWriteButton = chakra(Button, {
+  baseStyle: {
+    marginTop: '10px',
+    width: '100%',
   },
 });

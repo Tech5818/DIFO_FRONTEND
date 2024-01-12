@@ -29,9 +29,9 @@ export const Recent = ({
             </M_RecentTitleBox>
             <RecentLists>
               <RecentItem
-                title='제목인데 어쩔건데'
+                title='테스트'
                 writer='신권호'
-                date='5분전'
+                date='1시간전'
               />
             </RecentLists>
           </M_RecentBox>

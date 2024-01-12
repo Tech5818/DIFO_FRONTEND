@@ -1,3 +1,4 @@
+import { Mobile, PC } from '../../Responsive';
 import { Quick } from '../../components/quick/Quick';
 import { Recent } from '../../components/recent/Recent';
 import { TimeTable } from '../../components/timeTable/TimeTable';
@@ -22,15 +23,18 @@ const itemAnimation = {
 const HomePage = () => {
   return (
     <>
-      <M_HomeContent
-        initial='close'
-        animate='open'
-        variants={containerAnimation}
-      >
-        <Quick />
-        <Recent variants={itemAnimation} />
-        <TimeTable variants={itemAnimation} />
-      </M_HomeContent>
+      <Mobile>
+        <M_HomeContent
+          initial='close'
+          animate='open'
+          variants={containerAnimation}
+        >
+          <Quick />
+          <Recent variants={itemAnimation} />
+          <TimeTable variants={itemAnimation} />
+        </M_HomeContent>
+      </Mobile>
+      <PC></PC>
     </>
   );
 };

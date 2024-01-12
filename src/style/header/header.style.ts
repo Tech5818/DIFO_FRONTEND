@@ -1,6 +1,7 @@
 import { Box, Flex, chakra } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 /**
  * @todo 모바일 Header components
@@ -64,5 +65,36 @@ export const M_MENU_NAV = chakra(motion.ul, {
     width: '100%',
     textAlign: 'center',
     padding: '0.3rem',
+  },
+});
+
+export const P_HeaderContainer = chakra(Flex, {
+  baseStyle: {
+    background: '#fff',
+    boxShadow: '0 4px 8px rgba(218, 226, 237, 0.6)',
+    height: '80px',
+    width: '100vw',
+    alignItems: 'center',
+    padding: '0 20px',
+    justifyContent: 'space-between',
+    zIndex: 1,
+  },
+});
+
+export const P_HeaderGNB = chakra(Flex, {
+  baseStyle: {
+    gap: '15px',
+  },
+});
+
+export const P_HeaderMenu = chakra(Link, {
+  baseStyle: {
+    cursor: 'pointer',
+    fontSize: '18px',
+    _hover: {
+      color: '#4285EB',
+      fontFamily: 'medium',
+      textDecoration: 'underLine',
+    },
   },
 });

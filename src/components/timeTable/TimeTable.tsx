@@ -22,7 +22,6 @@ export const TimeTable = ({
   useEffect(() => {
     const fetchData = async () => {
       const data = await getTimeTable();
-      console.log(data);
       setClasses(data);
     };
     fetchData();

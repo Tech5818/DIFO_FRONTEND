@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
 import {
+  M_BestWorkConents,
   M_BestWorkContent,
   M_BestWorkContentImage,
   M_BestWorkContentTextArea,
   M_BestWorkContentTitle,
   M_BestWorkContentWriter,
+  M_BestWorkSkeleton,
+  M_BestWorkSkeletonContainer,
+  M_BestWorkTitleSkeleton,
   M_BestWorksContainer,
   M_BestWorksContents,
   M_BestWorksTitle,
@@ -47,9 +51,20 @@ export const BestWorks = ({
   return (
     <>
       <Mobile>
-        {!data && <h3>Loading....</h3>}
+        {!data && (
+          <M_BestWorkSkeletonContainer>
+            <M_BestWorkTitleSkeleton />
+            <M_BestWorkConents>
+              <M_BestWorkSkeleton />
+              <M_BestWorkSkeleton />
+            </M_BestWorkConents>
+          </M_BestWorkSkeletonContainer>
+        )}
         {!!data && (
-          <M_BestWorksContainer>
+          <M_BestWorksContainer
+            whileInView={{ y: 0, opacity: 1 }}
+            initial={{ y: '30%', opacity: 0 }}
+          >
             <M_BestWorksTitle>{title}</M_BestWorksTitle>
             {type === 'portfolio' ? (
               <M_BestWorksContents>
