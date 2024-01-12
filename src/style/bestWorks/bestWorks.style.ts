@@ -1,11 +1,13 @@
 import {
   Flex,
   Image,
+  Skeleton,
   Text,
   chakra,
 } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 
-export const M_BestWorksContainer = chakra(Flex, {
+export const M_BestWorksContainer = chakra(motion.div, {
   baseStyle: {
     width: '100%',
     flexFlow: 'column',
@@ -70,5 +72,37 @@ export const M_BestWorkContentWriter = chakra(Text, {
   baseStyle: {
     fontSize: '18px',
     color: '#ccc',
+  },
+});
+
+export const M_BestWorkSkeletonContainer = chakra(Flex, {
+  baseStyle: {
+    width: '100%',
+    height: '315px',
+    flexFlow: 'column',
+  },
+});
+
+export const M_BestWorkTitleSkeleton = chakra(Skeleton, {
+  baseStyle: {
+    width: '70%',
+    height: '33px',
+    borderRadius: '10px',
+  },
+});
+
+export const M_BestWorkConents = chakra(Flex, {
+  baseStyle: {
+    gap: '20px',
+    padding: '10px 0',
+    overflow: 'hidden',
+  },
+});
+
+export const M_BestWorkSkeleton = chakra(Skeleton, {
+  baseStyle: {
+    minWidth: '300px',
+    height: '262px',
+    borderRadius: '10px',
   },
 });

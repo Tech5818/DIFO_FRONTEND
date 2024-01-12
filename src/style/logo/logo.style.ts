@@ -5,3 +5,9 @@ export const M_LogoImage = chakra(Image, {
     height: '30px',
   },
 });
+
+export const P_LogoImage = chakra(Image, {
+  baseStyle: {
+    height: '35px',
+  },
+});

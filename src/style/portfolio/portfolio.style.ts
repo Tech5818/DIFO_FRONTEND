@@ -1,9 +1,12 @@
 import {
+  Button,
   Flex,
   Image,
+  Input,
   Text,
   chakra,
 } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 
 export const M_PortfolioContainer = chakra(Flex, {
   baseStyle: {
@@ -84,5 +87,60 @@ export const M_PortfolioStack = chakra(Text, {
     color: '#fff',
     borderRadius: '50px ',
     fontSize: '12px',
+  },
+});
+
+export const PortfolioWriteContainer = chakra(Flex, {
+  baseStyle: {
+    padding: '20px',
+    flexFlow: 'column',
+    gap: '20px',
+  },
+});
+
+export const PortfolioWriteBox = chakra(motion.div, {
+  baseStyle: {
+    background: '#fff',
+    padding: '20px',
+    boxShadow: '0 4px 8px rgba(218, 226, 237, 0.6)',
+    flexFlow: 'column',
+    gap: '20px',
+    display: 'flex',
+  },
+});
+
+export const PortfolioWriteTitle = chakra(Text, {
+  baseStyle: {
+    fontSize: '32px',
+    fontFamily: 'medium',
+  },
+});
+
+export const PortfolioWriteMain = chakra(Flex, {
+  baseStyle: {
+    flexFlow: 'column',
+    gap: '10px',
+  },
+});
+
+export const PortfolioWriteTitleInput = chakra(Input, {
+  baseStyle: {
+    fontSize: '18px',
+  },
+});
+
+export const PortfolioWriteButton = chakra(Button, {
+  baseStyle: {
+    fontSize: '22px',
+    padding: '30px',
+    width: '20%',
+    alignSelf: 'end',
+  },
+});
+
+export const M_PortfolioWriteButton = chakra(Button, {
+  baseStyle: {
+    fontSize: '20px',
+    padding: '30px',
   },
 });

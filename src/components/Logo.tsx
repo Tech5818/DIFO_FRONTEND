@@ -1,7 +1,10 @@
 import { useNavigate } from 'react-router-dom';
-import { Mobile } from '../Responsive';
+import { Mobile, PC } from '../Responsive';
 import LogoImg from '../assets/Logo.png';
-import { M_LogoImage } from '../style/logo/logo.style';
+import {
+  M_LogoImage,
+  P_LogoImage,
+} from '../style/logo/logo.style';
 
 export const Logo = () => {
   const navigate = useNavigate();
@@ -15,8 +18,17 @@ export const Logo = () => {
   return (
     <>
       <Mobile>
-        <M_LogoImage src={LogoImg} onClick={handleClickLogo} />
+        <M_LogoImage
+          src={LogoImg}
+          onClick={handleClickLogo}
+        />
       </Mobile>
+      <PC>
+        <P_LogoImage
+          src={LogoImg}
+          onClick={handleClickLogo}
+        />
+      </PC>
     </>
   );
 };
