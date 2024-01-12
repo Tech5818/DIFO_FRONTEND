@@ -101,7 +101,7 @@ export const WorkList = () => {
                                 portfolio.portfolioTitle
                               }
                               writer={`#${portfolio.memberId}`}
-                              date={portfolio.createdDate.toDateString()}
+                              date={portfolio.createdDate}
                               type='portfolio'
                             />
                           </Link>

@@ -16,7 +16,7 @@ interface WorkListsItem {
   type: string;
   title: string;
   writer: string;
-  date: string;
+  date: Date;
   stacks?: Stack[];
 }
 
